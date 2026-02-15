@@ -1,0 +1,78 @@
+//переменные
+$primary-color: #3498db;
+$text-color:#007787;
+$card-bg: white;
+$spaing: 20px;
+//миксин
+@mixin rounded($radius: 4px){
+    border-radius: $radius;
+}
+//вложенная структура селекторов
+.product-card{
+    border: 1px solid #88eded;
+    color: $primary-color;
+    padding: $spaing;
+    @include rounded(8px);
+    max-width: 300px;
+    img{
+        width: 100%;
+        aspect-ratio: 1/1;
+        height: auto;
+        @include rounded; 
+        display: block;  
+    }
+    .product-name {
+        color: $text-color;
+        font-size: 24px;
+    }
+    .product-description-box{
+        background: #f5f5;
+        padding:$spaing;
+        .product-description-text{
+            color:$text-color;
+            line-height: 1.5;
+
+        }
+
+    }
+    .product-btn{
+        padding: 12px 24px;
+        @include rounded; 
+        border: none;
+        
+        background: $primary-color;
+        color: white;
+        .btn-text{
+            font-weight: bold;
+        }
+    }
+    .product-price{
+        
+        display: flex;
+        flex-direction: row;
+        margin: $spaing 0;
+        align-items: baseline;  
+        gap: 8px;
+        .price-label{
+            color: #60fade;
+            font-size: 24px;
+            font-weight: normal;
+
+        }
+        .price-value{
+            color: #e53935;
+            font-size: 24px;
+            font-weight: bold;
+            font-family: 'Courier New', Courier, monospace;
+        }
+    }
+}
+body {
+  display: flex;               
+  justify-content: center;    
+  align-items: center;         
+  min-height: 100vh;          
+  margin: 0;                   
+  background: #f8f9fa;         
+}
+
