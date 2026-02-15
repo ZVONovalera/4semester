@@ -32,7 +32,7 @@ app.patch('/goods/:id', (req,res) =>
     const {name, price} = req.body;
     if (name !== undefined) item.name = name;
     if (price !== undefined) item.price = price;
-    res.json(item);
+    res.json(item);  
 });
 app.delete('/goods/:id', (req,res) =>{
     goods = goods.filter(u => u.id != req.params.id);
